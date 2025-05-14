@@ -36,7 +36,9 @@ Geographies
 // Context: "After reviewing the previous data output, we noticed records with GeographyType labeled as 'Country/Region.' For our detailed analysis, we only want to focus on cities located in Ontario, Canada."
 // Question: "How would you filter the Geography table to retrieve records where the Type is 'City' and the Province Name is 'Ontario'?"
 Geographies
-	.Where(geography => geography.StateProvinceName == "Ontario" && geography.RegionCountryName == "Canada")
+	.Where(geography => geography.GeographyType == "City" && 
+						geography.StateProvinceName == "Ontario" && 
+						geography.RegionCountryName == "Canada")
 	.Dump();
 
 // Question 4: Filtering using Contain

@@ -37,7 +37,7 @@ Geographies
 // Context: "After reviewing the previous data output, we noticed records with GeographyType labeled as 'Country/Region.' For our detailed analysis, we only want to focus on cities located in Canada."
 // Question: "How would you filter the Geography table to retrieve records where the Type 'City' is ordered by province and then city?"
 Geographies
-	.Where(geography => geography.RegionCountryName == "Canada")
+	.Where(geography => geography.GeographyType == "City" && geography.RegionCountryName == "Canada")
 	.OrderBy(geography => geography.StateProvinceName)
 	.ThenBy(geography => geography.CityName)
 	.Dump();
