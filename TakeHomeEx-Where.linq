@@ -1,12 +1,14 @@
 <Query Kind="Statements">
   <Connection>
-    <ID>8dca33ac-f255-4e47-9dc1-c625af5e0aae</ID>
+    <ID>efd83541-6593-4941-ae92-507ca991e985</ID>
     <NamingServiceVersion>2</NamingServiceVersion>
     <Persist>true</Persist>
     <Driver Assembly="(internal)" PublicKeyToken="no-strong-name">LINQPad.Drivers.EFCore.DynamicDriver</Driver>
     <AllowDateOnlyTimeOnly>true</AllowDateOnlyTimeOnly>
-    <Database>Contoso</Database>
     <Server>DESKTOP-GGJISR9\SQLEXPRESS</Server>
+    <Database>ChinookSept2018</Database>
+    <UserName>hansen</UserName>
+    <Password>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ0Fi5Sq400mbuuM9ihwFuAAAAAACAAAAAAAQZgAAAAEAACAAAACf2puG1lx0oaP/aaH8zNw9FKFi2FeX6OG1LH/6iCbR6gAAAAAOgAAAAAIAACAAAABN5LLb/qIV+Bf5PnQbgODom7BdVedsu2qeP0SI99iPKBAAAADA+aiuOmBQ5eHo4b6q5r0WQAAAAIvfT0oqITc3x4tQWUQWVcCVLoWfDPnsuE9ss7pcU6t5mqIXMYyepNk/eToR4N313TicSuNoPgT3IqmOIaIwsC4=</Password>
     <DriverData>
       <EncryptSqlTraffic>True</EncryptSqlTraffic>
       <PreserveNumeric1>True</PreserveNumeric1>
