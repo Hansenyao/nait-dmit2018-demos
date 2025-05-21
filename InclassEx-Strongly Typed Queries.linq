@@ -21,7 +21,7 @@ void Main()
 {
 	GetEmployeeReview("al", 30).Dump();
 
-	GetProductColorProcess("Music").Dump();
+	CodeBehind_GetProductsByCategory("Music").Dump();
 }
 
 // You can define other methods, fields, classes and namespaces here
@@ -52,12 +52,19 @@ public class EmployeeView
 	public string IncomeCategory { get; set; }
 }
 
-
+public List<ProductColorProcessView> CodeBehind_GetProductsByCategory(String categoryName) 
+{
+	// TODO: 
+	// 1. Data validation
+	// 2. Business rules
+	// 3. Others checking
+	return System_GetProductsByCategory(categoryName);	
+}
 
 // Question 2: Strongly Typed Queries
 // Context: "The production team at Contoso Corporation needs to review their product line to determine which products require additional color processing. The team is particularly interested in products within specific categories, which they will specify as needed. For this task, the production team will provide a category name to search for products within that category. They need to identify whether each product's color requires additional processing, with black and white colors not needing further processing. The results should be organized by the product's style name to facilitate the review process."
 // Objective: "Create a method that retrieves product records based on a category name search. The method should take a categoryName parameter and return a strongly typed list of ProductColorProcessView objects, containing the product name, color, and whether additional color processing is needed, ordered by the product's style name."
-public List<ProductColorProcessView> GetProductColorProcess(String categoryName)
+public List<ProductColorProcessView> System_GetProductsByCategory(String categoryName)
 {
 	List<ProductColorProcessView> products = Products
 												.Where(product => product.ProductSubcategory.ProductCategory.ProductCategoryName.Contains(categoryName))
