@@ -57,12 +57,20 @@ public List<ManagerView> System_GetManagerAndSubordinates()
 					FirstName = manager.FirstName,
 					LastName = manager.LastName,
 					Position = manager.Title,
-					Employees = Employees
-									.Where(employee => employee.ParentEmployeeID == manager.EmployeeID)
-									.OrderBy(employee => employee.LastName)
-									.Select(employee => new SubordinateView {
-										FullName = employee.FirstName + " " + employee.LastName,
-										Title = employee.Title
+					//Employees = Employees
+					//				.Where(employee => employee.ParentEmployeeID == manager.EmployeeID)
+					//				.OrderBy(employee => employee.LastName)
+					//				.Select(employee => new SubordinateView {
+					//					FullName = employee.FirstName + " " + employee.LastName,
+					//					Title = employee.Title
+					//				})
+					//				.ToList()
+					Employees = manager.Children
+									.OrderBy(sub => sub.LastName)
+									.Select(sub => new SubordinateView
+									{
+										FullName = sub.FirstName + " " + sub.LastName,
+										Title = sub.Title
 									})
 									.ToList()
 				})
@@ -123,7 +131,7 @@ public List<StoreSummaryView> System_GetInventoryOnHandByCity(string city, int o
 												Name = inventory.Product.ProductName,
 												Price = inventory.Product.UnitPrice ?? 0,
 												Cost = inventory.UnitCost,
-												Margin = inventory.MinDayInStock ?? 0,
+												Margin = inventory.Product.UnitPrice - inventory.Product.UnitCost ?? 0,
 												OnHand = inventory.OnHandQuantity
 											})
 											.ToList()
