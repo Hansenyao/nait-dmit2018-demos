@@ -20,8 +20,10 @@
 void Main()
 {
 	CodeBehind_GetManagerAndSubordinates().Dump();
-	
-	CodeBehind_GetInventoryOnHandByCity("Seattle", 200).Dump();
+
+	CodeBehind_GetInventoryOnHandByCity("Seattle", 200).Dump("Seattle @ 200");
+
+	CodeBehind_GetInventoryOnHandByCity("New York", 100).Dump("New York @ 10");
 }
 
 // Question 1: 
